@@ -1,182 +1,95 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="googleef80482f192660b2.html" />
-  <meta name="google-site-verification" content="MW59PpCi89dyzPOXzEiGFC6wePHGdxR-LKaemAbj9kk" />
-  <meta name="description" content="Iglesia Pentecostés Bet-EL en Winston-Salem, NC. Servicios en español, alabanza, comunidad cristiana y más. Todos son bienvenidos.">
-  <meta name="keywords" content="iglesia, Winston-Salem, Bet-EL, pentecostés, Ricardo Luna, iglesia cristiana, servicios en español, iglesia hispana">
-  <meta name="author" content="Iglesia Pentecostés Bet-EL">
-  <meta property="og:title" content="Iglesia Pentecostés Bet-EL" />
-  <meta property="og:description" content="Bienvenidos a nuestra iglesia en Winston-Salem, NC. Todos son bienvenidos." />
-  <meta property="og:url" content="https://directory1015.github.io/Bet-EL-website/" />
-  <meta property="og:type" content="website" />
-  <title>Iglesia Pentecostés Bet-EL</title>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #ffffff; /* Full white background */
+  color: #333;
+}
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #ffffff;
-      color: #333;
-    }
+header, footer {
+  background: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+}
 
-    header, footer {
-      background: #001f3f;
-      color: white;
-      text-align: center;
-      padding: 1.5em 0;
-      position: relative;
-    }
+nav {
+  background: #001a33;
+  padding: 1em 0;
+  text-align: center;
+}
 
-    .language-switcher {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #ffffff22;
-      padding: 0.5em 1em;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
+nav a {
+  color: white;
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    nav {
-      background: #001a33;
-      padding: 1em 0;
-      text-align: center;
-    }
+nav a:hover {
+  text-decoration: underline;
+}
 
-    nav a {
-      color: white;
-      margin: 0 1em;
-      text-decoration: none;
-      font-weight: bold;
-    }
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: white;
+  border-left: 8px solid #001f3f;
+  border-right: 8px solid #001f3f;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+section {
+  margin-bottom: 2em;
+}
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2em;
-      background-color: white;
-      border-left: 8px solid #001f3f;
-      border-right: 8px solid #001f3f;
-    }
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
 
-    section {
-      margin-bottom: 2em;
-    }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
 
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-    }
+.gallery img {
+  max-width: 200px;
+  height: auto;
+  border: 2px solid #001f3f;
+  border-radius: 8px;
+}
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      margin-top: 1em;
-    }
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
 
-    .gallery img {
-      max-width: 200px;
-      height: auto;
-      border: 2px solid #001f3f;
-      border-radius: 8px;
-    }
+.video-container iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
 
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 1em;
-    }
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 0.5em 0;
+  }
+}
 
-    .video-container iframe {
-      max-width: 100%;
-      border-radius: 8px;
-    }
+.donate-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: gold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.5em 0;
-      }
-    }
-
-    .donate-btn {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: gold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Iglesia Pentecostés Bet-EL</h1>
-    <p>3510 S Main St, Winston-Salem, NC</p>
-    <div class="language-switcher" onclick="toggleLanguage()">Español | English</div>
-  </header>
-
-  <nav>
-    <a href="#about">Sobre Nosotros</a>
-    <a href="#services">Servicios</a>
-    <a href="#location">Ubicación</a>
-    <a href="#gallery">Galería</a>
-    <a href="#music">Alabanza</a>
-    <a href="#sermons">Predicaciones</a>
-    <a href="#livestream">En Vivo</a>
-    <a href="#donate">Donar</a>
-    <a href="#contact">Contacto</a>
-  </nav>
-
-  <main>
-    <section id="about">
-      <div class="lang-es">
-        <h2>Bienvenidos</h2>
-        <p>Somos una iglesia cristiana dedicada a compartir el amor de Cristo con la comunidad. ¡Todos son bienvenidos en nuestra congregación!</p>
-        <p>¡Este pasado viernes celebramos nuestro <strong>23 aniversario</strong> como iglesia!</p>
-      </div>
-      <div class="lang-en" style="display: none;">
-        <h2>Welcome</h2>
-        <p>We are a Christian church dedicated to sharing the love of Christ with the community. Everyone is welcome in our congregation!</p>
-        <p>This past Friday we celebrated our <strong>23rd anniversary</strong> as a church!</p>
-      </div>
-    </section>
-
-    <!-- (Other sections remain the same) -->
-
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Iglesia Pentecostés Bet-EL. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>
-    let currentLang = 'es';
-    function toggleLanguage() {
-      const esElements = document.querySelectorAll('.lang-es');
-      const enElements = document.querySelectorAll('.lang-en');
-      const showEs = currentLang === 'en';
-      esElements.forEach(el => el.style.display = showEs ? 'block' : 'none');
-      enElements.forEach(el => el.style.display = showEs ? 'none' : 'block');
-      currentLang = showEs ? 'es' : 'en';
-    }
-  </script>
-
-</body>
-</html>
 
 
 </body>
