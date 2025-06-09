@@ -18,7 +18,7 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #001f3f; /* Doves removed, solid navy */
+      background-color: #001f3f; /* Clean navy, no background image */
       color: #f0f0f0;
     }
 
@@ -173,6 +173,46 @@
       <h2>Escucha Predicaciones Recientes</h2>
       <audio controls>
         <source src="https://your-audio-link.com/sermon.mp3" type="audio/mpeg">
+        Tu navegador no soporta el reproductor de audio.
+      </audio>
+      <p>Mensaje del Domingo por el Pastor Ricardo Luna</p>
+    </section>
 
+    <section id="livestream">
+      <h2>Servicio en Vivo</h2>
+      <div class="video-container">
+        <iframe width="560" height="315"
+          src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID"
+          title="Servicio en Vivo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section id="donate">
+      <h2>Apoya Nuestro Ministerio</h2>
+      <p>Tu generosidad ayuda a que sigamos compartiendo la Palabra de Dios.</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
+        <input type="submit" value="Donar con PayPal" class="donate-btn">
+      </form>
+    </section>
+
+    <section id="contact">
+      <h2>Contáctanos</h2>
+      <p>Pastor Ricardo Luna</p>
+      <p>Email: TBD</p>
+      <p>Teléfono: (336) 462-4594</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Iglesia Pentecostés Bet-EL. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
 
 
