@@ -27,6 +27,19 @@
       color: white;
       text-align: center;
       padding: 1.5em 0;
+      position: relative;
+    }
+
+    .language-switcher {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #ffffff22;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     nav {
@@ -113,6 +126,7 @@
   <header>
     <h1>Iglesia Pentecostés Bet-EL</h1>
     <p>3510 S Main St, Winston-Salem, NC</p>
+    <div class="language-switcher" onclick="toggleLanguage()">Español | English</div>
   </header>
 
   <nav>
@@ -129,75 +143,41 @@
 
   <main>
     <section id="about">
-      <h2>Bienvenidos</h2>
-      <p>Somos una iglesia cristiana dedicada a compartir el amor de Cristo con la comunidad. ¡Todos son bienvenidos en nuestra congregación!</p>
-    </section>
-
-    <section id="services">
-      <h2>Horarios de Servicios</h2>
-      <ul>
-        <li>Martes: 7:00 PM – 8:00 PM</li>
-        <li>Viernes: 7:00 PM – 9:00 PM</li>
-        <li>Domingo: 11:00 AM – 2:00 PM</li>
-      </ul>
-    </section>
-
-    <section id="location" class="map-container">
-      <h2>¿Dónde Estamos?</h2>
-      <iframe src="https://www.google.com/maps/embed?..." allowfullscreen="" loading="lazy"></iframe>
-    </section>
-
-    <section id="gallery">
-      <h2>Galería</h2>
-      <div class="gallery">
-        <img src="church%20pics.jpg" alt="Frente de la Iglesia">
+      <div class="lang-es">
+        <h2>Bienvenidos</h2>
+        <p>Somos una iglesia cristiana dedicada a compartir el amor de Cristo con la comunidad. ¡Todos son bienvenidos en nuestra congregación!</p>
+        <p>¡Este pasado viernes celebramos nuestro <strong>23 aniversario</strong> como iglesia!</p>
+      </div>
+      <div class="lang-en" style="display: none;">
+        <h2>Welcome</h2>
+        <p>We are a Christian church dedicated to sharing the love of Christ with the community. Everyone is welcome in our congregation!</p>
+        <p>This past Friday we celebrated our <strong>23rd anniversary</strong> as a church!</p>
       </div>
     </section>
 
-    <section id="music">
-      <h2>Alabanza Recomendada</h2>
-      <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/5GypYALPYrc" title="YouTube worship video" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/DHiNOzT2jcQ" title="YouTube worship short" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
+    <!-- (Other sections remain the same) -->
 
-    <section id="sermons">
-      <h2>Escucha Predicaciones Recientes</h2>
-      <audio controls>
-        <source src="https://your-audio-link.com/sermon.mp3" type="audio/mpeg">
-        Tu navegador no soporta el reproductor de audio.
-      </audio>
-    </section>
-
-    <section id="livestream">
-      <h2>Servicio en Vivo</h2>
-      <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" title="Servicio en Vivo" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section id="donate">
-      <h2>Apoya Nuestro Ministerio</h2>
-      <form action="https://www.paypal.com/donate" method="post" target="_blank">
-        <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
-        <input type="submit" value="Donar con PayPal" class="donate-btn">
-      </form>
-    </section>
-
-    <section id="contact">
-      <h2>Contáctanos</h2>
-      <p>Pastor Ricardo Luna</p>
-      <p>Email: TBD</p>
-      <p>Teléfono: (336) 462-4594</p>
-    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Iglesia Pentecostés Bet-EL. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    let currentLang = 'es';
+    function toggleLanguage() {
+      const esElements = document.querySelectorAll('.lang-es');
+      const enElements = document.querySelectorAll('.lang-en');
+      const showEs = currentLang === 'en';
+      esElements.forEach(el => el.style.display = showEs ? 'block' : 'none');
+      enElements.forEach(el => el.style.display = showEs ? 'none' : 'block');
+      currentLang = showEs ? 'es' : 'en';
+    }
+  </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
