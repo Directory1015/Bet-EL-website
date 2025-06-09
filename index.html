@@ -18,19 +18,19 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #001f3f; /* Clean navy, no background image */
-      color: #f0f0f0;
+      background-color: #ffffff;
+      color: #333;
     }
 
-    header {
-      background: #001a33;
+    header, footer {
+      background: #001f3f;
       color: white;
-      padding: 1.5em 0;
       text-align: center;
+      padding: 1.5em 0;
     }
 
     nav {
-      background: #000d1a;
+      background: #001a33;
       padding: 1em 0;
       text-align: center;
     }
@@ -48,8 +48,11 @@
 
     main {
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
       padding: 2em;
+      background-color: white;
+      border-left: 8px solid #001f3f;
+      border-right: 8px solid #001f3f;
     }
 
     section {
@@ -73,7 +76,7 @@
     .gallery img {
       max-width: 200px;
       height: auto;
-      border: 2px solid white;
+      border: 2px solid #001f3f;
       border-radius: 8px;
     }
 
@@ -86,14 +89,6 @@
     .video-container iframe {
       max-width: 100%;
       border-radius: 8px;
-    }
-
-    footer {
-      background: #001a33;
-      color: white;
-      text-align: center;
-      padding: 1em;
-      margin-top: 2em;
     }
 
     @media (max-width: 600px) {
@@ -149,7 +144,7 @@
 
     <section id="location" class="map-container">
       <h2>¿Dónde Estamos?</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d316.759126104058!2d-80.23980029309198!3d36.04826600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8853af84cf4fc6a1%3A0x50160dabd19e110a!2sIglesia%20Pentecostes%20Betsaida!5e0!3m2!1sen!2sus!4v1685912364822!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?..." allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <section id="gallery">
@@ -162,10 +157,10 @@
     <section id="music">
       <h2>Alabanza Recomendada</h2>
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/5GypYALPYrc" title="YouTube worship video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5GypYALPYrc" title="YouTube worship video" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/DHiNOzT2jcQ" title="YouTube worship short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DHiNOzT2jcQ" title="YouTube worship short" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -175,25 +170,17 @@
         <source src="https://your-audio-link.com/sermon.mp3" type="audio/mpeg">
         Tu navegador no soporta el reproductor de audio.
       </audio>
-      <p>Mensaje del Domingo por el Pastor Ricardo Luna</p>
     </section>
 
     <section id="livestream">
       <h2>Servicio en Vivo</h2>
       <div class="video-container">
-        <iframe width="560" height="315"
-          src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID"
-          title="Servicio en Vivo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" title="Servicio en Vivo" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
     <section id="donate">
       <h2>Apoya Nuestro Ministerio</h2>
-      <p>Tu generosidad ayuda a que sigamos compartiendo la Palabra de Dios.</p>
       <form action="https://www.paypal.com/donate" method="post" target="_blank">
         <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
         <input type="submit" value="Donar con PayPal" class="donate-btn">
@@ -214,5 +201,4 @@
 
 </body>
 </html>
-
 
