@@ -2,224 +2,498 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iglesia Cristiana Bet‑EL — Winston‑Salem, NC</title>
+  <meta name="description" content="Iglesia Pentecostés Bet‑EL en Winston‑Salem, NC. Servicios en español, alabanza, comunidad cristiana y más. Todos son bienvenidos." />
+  <meta name="keywords" content="iglesia, Winston‑Salem, Bet‑EL, pentecostés, Ricardo Luna, iglesia cristiana, servicios en español, iglesia hispana" />
+  <meta name="author" content="Iglesia Pentecostés Bet‑EL" />
   <meta name="google-site-verification" content="j3zYA7dIgU4Q2K9UqVH58YoEEOlkDXKAYjMdvHgEPXg" />
-  <meta name="description" content="Iglesia Pentecostés Bet-EL en Winston-Salem, NC. Servicios en español, alabanza, comunidad cristiana y más. Todos son bienvenidos.">
-  <meta name="keywords" content="iglesia, Winston-Salem, Bet-EL, pentecostés, Ricardo Luna, iglesia cristiana, servicios en español, iglesia hispana">
-  <meta name="author" content="Iglesia Pentecostés Bet-EL">
-  <meta property="og:title" content="Iglesia Pentecostés Bet-EL" />
-  <meta property="og:description" content="Bienvenidos a nuestra iglesia en Winston-Salem, NC. Todos son bienvenidos." />
-  <meta property="og:url" content="https://directory1015.github.io/Bet-EL-website/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Iglesia Cristiana Bet‑EL" />
+  <meta property="og:description" content="Bienvenidos a nuestra iglesia en Winston‑Salem, NC. ¡Todos son bienvenidos!" />
   <meta property="og:type" content="website" />
-  <title>Iglesia Cristiana Bet-EL</title>
+  <meta property="og:url" content="https://directory1015.github.io/Bet-EL-website/" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      background-color: #0063c8;
-      font-family: Arial, sans-serif;
+    /* ======= Design Tokens ======= */
+    :root{
+      --bg: #030712;              /* near-black */
+      --bg2: #0b1324;             /* deep navy */
+      --brand: #2aa9ff;           /* Bet-EL blue */
+      --brand-2: #76e4ff;         /* light accent */
+      --brand-3: #00ffd1;         /* aqua accent */
+      --text: #e9eef7;            /* primary text */
+      --muted: #9fb0c8;           /* secondary text */
+      --glass: rgba(255,255,255,.08);
+      --glass-brd: rgba(255,255,255,.16);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius-lg: 26px;
+      --max: 1200px;              /* content width */
     }
-    header {
-      background-color: #001a33;
-      color: white;
-      padding: 1.5em 0;
-      text-align: center;
+
+    /* ======= Global Reset ======= */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, #0d2b57 0%, transparent 60%),
+                           radial-gradient(900px 700px at 100% 0%, #062244 0%, transparent 60%),
+                           linear-gradient(180deg, #040a16, #030712);
+      background-attachment: fixed;
+      line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background-color: white;
-      color: #333;
-      padding: 2em;
+
+    /* Subtle stars pattern */
+    body::before{
+      content:""; position:fixed; inset:0; pointer-events:none;
+      background:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.18) 50%, transparent 51%),
+        radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,.14) 50%, transparent 51%),
+        radial-gradient(1px 1px at 50% 70%, rgba(255,255,255,.12) 50%, transparent 51%),
+        radial-gradient(1px 1px at 20% 80%, rgba(255,255,255,.1) 50%, transparent 51%);
+      opacity:.4;
     }
-    nav {
-      background: #000d1a;
-      padding: 1em 0;
-      text-align: center;
+
+    a{color:var(--brand)}
+    img{max-width:100%; display:block}
+    .container{width:100%; max-width:var(--max); margin:0 auto; padding:0 24px}
+
+    /* ======= Top Nav ======= */
+    .nav-wrap{position:sticky; top:0; z-index:1000; backdrop-filter: blur(14px); background:linear-gradient(180deg, rgba(3,7,18,.75), rgba(3,7,18,.35)); border-bottom:1px solid var(--glass-brd)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .brand img{width:42px; height:42px; border-radius:12px; box-shadow: var(--shadow)}
+    .brand .title{font-weight:800; letter-spacing:.3px; color:#fff}
+    .brand .sub{font-size:12px; color:var(--muted); margin-top:-2px}
+
+    .nav-links{display:flex; flex-wrap:wrap; gap:8px 14px}
+    .nav-links a{padding:10px 14px; border-radius:999px; text-decoration:none; color:#d9e6ff; font-weight:600; border:1px solid transparent}
+    .nav-links a:hover{border-color:var(--glass-brd); background:var(--glass)}
+
+    .nav-cta{display:flex; gap:10px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:1px solid var(--glass-brd); background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); color:#fff; text-decoration:none; font-weight:700; box-shadow: var(--shadow);
     }
-    nav a {
-      color: white;
-      margin: 0 1em;
-      text-decoration: none;
-      font-weight: bold;
+    .btn.glow{
+      position:relative; border:0; background:linear-gradient(90deg, var(--brand), var(--brand-3));
     }
-    nav a:hover {
-      text-decoration: underline;
+    .btn.glow::after{content:""; position:absolute; inset:-2px; border-radius:inherit; padding:1px; background:linear-gradient(90deg, var(--brand), var(--brand-3)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity:.7; filter:blur(4px)}
+
+    /* ======= Hero ======= */
+    .hero{ position:relative; padding:clamp(64px, 6vw, 120px) 0 40px}
+    .hero .grid{ display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center }
+
+    .headline{font-family:"Playfair Display", serif; font-weight:700; font-size: clamp(34px, 5.4vw, 64px); line-height:1.08; letter-spacing:.2px}
+    .headline em{font-style:normal; background:linear-gradient(90deg, var(--brand-2), #fff); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .lede{margin:18px 0 26px; color:var(--muted); font-size: clamp(16px, 1.5vw, 19px)}
+
+    .hero-card{background:var(--glass); border:1px solid var(--glass-brd); border-radius:var(--radius-lg); padding:22px; box-shadow: var(--shadow)}
+    .stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:14px}
+    .stat{padding:14px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid var(--glass-brd); border-radius:16px}
+    .stat b{display:block; font-size:22px}
+    .hero-img{position:relative}
+    .hero-img .frame{ border-radius:22px; overflow:hidden; border:1px solid var(--glass-brd); box-shadow: var(--shadow) }
+    .glow-ring{position:absolute; inset:auto; width:60%; height:60%; left:50%; top:52%; transform:translate(-50%, -50%); background: radial-gradient(closest-side, rgba(42,169,255,.18), transparent 60%); filter:blur(20px); pointer-events:none}
+
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .chip{padding:8px 12px; border-radius:999px; border:1px solid var(--glass-brd); background:rgba(255,255,255,.06); color:#d9e6ff; font-size:13px}
+
+    /* ======= Sections ======= */
+    section{scroll-margin-top:96px}
+    .section{ padding:64px 0 }
+    .section .head{ display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:26px }
+    .section h2{ font-family:"Playfair Display", serif; font-size: clamp(26px, 3.6vw, 40px); margin:0 }
+    .muted{ color:var(--muted) }
+
+    /* Cards / Grids */
+    .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
+    .grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px }
+    .card{ background:var(--glass); border:1px solid var(--glass-brd); border-radius:var(--radius); overflow:hidden; box-shadow: var(--shadow) }
+    .card .body{ padding:18px }
+    .card h3{ margin:0 0 6px }
+
+    /* Services (times) */
+    .times{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .time{ padding:16px; border-radius:16px; border:1px solid var(--glass-brd); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) }
+    .time b{ display:block; font-size:18px }
+
+    /* Media embeds */
+    .ratio{ position:relative; width:100%; padding-top:56.25% }
+    .ratio > iframe, .ratio > img{ position:absolute; inset:0; width:100%; height:100%; border:0 }
+
+    /* Donate */
+    .donate-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:18px }
+    .donate-box{ padding:18px; border-radius:16px; border:1px solid var(--glass-brd); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) }
+    .pill{ display:inline-flex; gap:8px; align-items:center; padding:10px 14px; border-radius:999px; background:linear-gradient(90deg, var(--brand), var(--brand-3)); color:#001827; font-weight:800; text-decoration:none; border:0 }
+
+    /* Prayer form */
+    .form{ display:grid; gap:12px }
+    .form input, .form textarea{
+      width:100%; padding:14px 16px; border-radius:12px; border:1px solid var(--glass-brd); background:rgba(255,255,255,.06); color:#fff; font-size:16px
     }
-    section {
-      margin-bottom: 2em;
+    .form button{ justify-self:start }
+
+    /* Footer */
+    footer{ border-top:1px solid var(--glass-brd); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.06)); padding:40px 0; margin-top:40px }
+    .footer-grid{ display:grid; grid-template-columns: 2fr 1fr 1fr; gap:20px }
+    .copyright{ color:var(--muted); font-size:14px; margin-top:10px }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero .grid{ grid-template-columns:1fr }
+      .grid-3{ grid-template-columns:1fr 1fr }
+      .donate-grid, .grid-2{ grid-template-columns:1fr }
+      .times{ grid-template-columns:1fr; }
+      .footer-grid{ grid-template-columns:1fr 1fr }
     }
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
+    @media (max-width: 640px){
+      .nav{flex-wrap:wrap}
+      .nav-cta{width:100%; justify-content:space-between}
+      .nav-links{display:none}
+      .footer-grid{ grid-template-columns:1fr }
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      margin-top: 1em;
-    }
-    .gallery img {
-      max-width: 200px;
-      height: auto;
-      border: 2px solid #001f3f;
-      border-radius: 8px;
-    }
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 1em;
-    }
-    .video-container iframe {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      background: #001a33;
-      color: white;
-      text-align: center;
-      padding: 1em;
-      margin-top: 2em;
-    }
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.5em 0;
-      }
-    }
-    .donate-btn {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: gold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .prayer-form input, .prayer-form textarea {
-      width: 100%;
-      padding: 0.75em;
-      margin-bottom: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-    .prayer-form button {
-      background-color: #001a33;
-      color: white;
-      padding: 0.75em 1.5em;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-    }
+
+    /* Scroll reveal */
+    .reveal{ opacity:0; transform: translateY(16px); transition: all .6s ease }
+    .reveal.in{ opacity:1; transform:none }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Iglesia Cristiana Bet-EL</h1>
-    <p>3510 S Main St, Winston-Salem, NC</p>
-  </header>
-  <nav>
-    <a href="#about">Sobre Nosotros</a>
-    <a href="#services">Servicios</a>
-    <a href="#location">Ubicación</a>
-    <a href="#gallery">Galería</a>
-    <a href="#music">Alabanza</a>
-    <a href="#sermons">Predicaciones</a>
-    <a href="#livestream">En Vivo</a>
-    <a href="#donate">Donar</a>
-    <a href="#prayer">Oración</a>
-    <a href="#contact">Contacto</a>
-  </nav>
-  <div class="container">
-    <main>
-      <section id="about">
-        <h2>Bienvenidos</h2>
-        <p>Somos una iglesia cristiana dedicada a compartir el amor de Cristo con la comunidad. ¡Todos son bienvenidos en nuestra congregación!</p>
-        <p><strong>🎉 ¡Recientemente celebramos nuestro 23° aniversario este pasado viernes a Domingo! Damos gracias a Dios por su fidelidad. 🎉</strong></p>
-      </section>
-      <section id="services">
-        <h2>Horarios de Servicios</h2>
-        <ul>
-          <li>Martes: 7:00 PM – 8:00 PM</li>
-          <li>Viernes: 7:00 PM – 9:00 PM</li>
-          <li>Domingo: 11:00 AM – 2:00 PM</li>
-        </ul>
-      </section>
-      <section id="location" class="map-container">
-        <h2>¿Dónde Estamos?</h2>
-        <iframe src="https://www.google.com/maps/embed?..." allowfullscreen loading="lazy"></iframe>
-      </section>
-      <section id="gallery">
-        <h2>Galería</h2>
-        <div class="gallery">
-          <img src="church%20pics.jpg" alt="Frente de la Iglesia">
+  <!-- ======= NAV ======= -->
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Inicio">
+        <img src="assets/logo.png" alt="Logo Bet‑EL" />
+        <div>
+          <div class="title">Bet‑EL</div>
+          <div class="sub">Iglesia Pentecostés</div>
         </div>
-      </section>
-      <section id="music">
-        <h2>Alabanza Recomendada</h2>
-        <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/5GypYALPYrc" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/DHiNOzT2jcQ" allowfullscreen></iframe>
-        </div>
-      </section>
-      <section id="sermons">
-        <h2>Escucha Predicaciones Recientes</h2>
-        <audio controls>
-          <source src="https://your-audio-link.com/sermon.mp3" type="audio/mpeg">
-          Tu navegador no soporta el reproductor de audio.
-        </audio>
-        <p>Mensaje del Domingo por el Pastor Ricardo Luna</p>
-      </section>
-      <section id="livestream">
-        <h2>Servicio en Vivo</h2>
-        <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" allowfullscreen></iframe>
-        </div>
-      </section>
-      <section id="donate">
-        <h2>Apoya Nuestro Ministerio</h2>
-        <p>Tu generosidad ayuda a que sigamos compartiendo la Palabra de Dios y sirviendo a nuestra comunidad.</p>
-        <form action="https://www.paypal.com/donate" method="post" target="_blank">
-          <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
-          <input type="submit" value="Donar con PayPal" class="donate-btn">
-        </form>
-        <div style="margin-top: 1.5em;">
-          <h3>También puedes donar con:</h3>
-          <ul>
-            <li><strong>💵 Cash App:</strong> <code>$TuCashtag</code></li>
-            <li><strong>🏦 Zelle:</strong> <code>tuemail@ejemplo.com</code></li>
-            <li><strong>📱 Venmo:</strong> <code>@TuVenmo</code></li>
-          </ul>
-          <p style="font-style: italic;">Gracias por sembrar en el Reino de Dios.</p>
-        </div>
-      </section>
-      <section id="prayer">
-        <h2>Petición de Oración</h2>
-        <p>Envános tu petición y estaremos orando por ti.</p>
-        <form action="https://formspree.io/f/myzjenpq" method="POST" class="prayer-form">
-          <input type="text" name="name" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="Tu correo electrónico" required>
-          <textarea name="message" rows="5" placeholder="Escribe tu petición de oración aquí..." required></textarea>
-          <button type="submit">Enviar Petición</button>
-        </form>
-      </section>
-      <section id="contact">
-        <h2>Contáctanos</h2>
-        <p>Pastor Ricardo Luna</p>
-        <p>Email: iglesiabetel2002@yahoo.com</p>
-        <p>Teléfono: (336) 462-4594</p>
-      </section>
-    </main>
+      </a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#about">Nosotros</a>
+        <a href="#services">Servicios</a>
+        <a href="#media">Alabanza</a>
+        <a href="#sermons">Predicaciones</a>
+        <a href="#livestream">En vivo</a>
+        <a href="#gallery">Galería</a>
+        <a href="#donate">Donar</a>
+        <a href="#prayer">Oración</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn" href="#location">Cómo llegar</a>
+        <a class="btn glow" href="#donate">Donar ahora</a>
+      </div>
+    </div>
   </div>
+
+  <!-- ======= HERO ======= -->
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="grid">
+        <div class="reveal">
+          <h1 class="headline">Una <em>familia</em> en Cristo, sirviendo a <em>Winston‑Salem</em>.</h1>
+          <p class="lede">Bienvenidos a Iglesia Cristiana Bet‑EL. Predicamos a Jesucristo, hacemos discípulos y servimos a nuestra comunidad con amor.</p>
+          <div class="chips" aria-hidden="true">
+            <span class="chip">Servicios en español</span>
+            <span class="chip">Alabanza &amp; adoración</span>
+            <span class="chip">Oración y comunidad</span>
+          </div>
+
+          <div class="hero-card" role="group" aria-label="Próximos servicios">
+            <strong>Horarios</strong>
+            <div class="stats">
+              <div class="stat"><b>Martes</b><span>7:00–8:00 PM</span></div>
+              <div class="stat"><b>Viernes</b><span>7:00–9:00 PM</span></div>
+              <div class="stat"><b>Domingo</b><span>11:00 AM–2:00 PM</span></div>
+            </div>
+          </div>
+          <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap">
+            <a class="btn glow" href="#livestream">Ver en vivo</a>
+            <a class="btn" href="#prayer">Pedir oración</a>
+          </div>
+        </div>
+
+        <div class="hero-img reveal">
+          <div class="frame ratio">
+            <!-- Replace with a real hero image of the church -->
+            <img src="assets/hero.jpg" alt="Nuestra congregación adorando" />
+          </div>
+          <div class="glow-ring" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= ABOUT & SERVICES ======= -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Sobre Nosotros</h2>
+        <p class="muted">3510 S Main St, Winston‑Salem, NC</p>
+      </div>
+      <div class="grid-2 reveal">
+        <div class="card">
+          <div class="body">
+            <h3>Nuestra misión</h3>
+            <p>Compartir el amor de Cristo, crecer en Su Palabra y ser luz para nuestra ciudad. ¡Todos son bienvenidos!</p>
+            <p><strong>🎉 Celebramos 23 años de la fidelidad de Dios.</strong></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="body">
+            <h3>Lo que creemos</h3>
+            <p>Creemos en la Biblia como Palabra de Dios, en Jesucristo como Salvador y en el poder del Espíritu Santo para transformar vidas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="services" class="section" style="padding-top:34px">
+        <div class="head">
+          <h2>Horarios de Servicios</h2>
+          <span class="muted">Te esperamos con tu familia</span>
+        </div>
+        <div class="times reveal">
+          <div class="time"><b>Martes</b><span>7:00 PM – 8:00 PM</span></div>
+          <div class="time"><b>Viernes</b><span>7:00 PM – 9:00 PM</span></div>
+          <div class="time"><b>Domingo</b><span>11:00 AM – 2:00 PM</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= MEDIA (PRAISE) ======= -->
+  <section id="media" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Alabanza Recomendada</h2>
+        <span class="muted">Adora con nosotros</span>
+      </div>
+      <div class="grid-2 reveal">
+        <div class="card">
+          <div class="ratio">
+            <iframe src="https://www.youtube.com/embed/5GypYALPYrc" title="Alabanza 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="body">
+            <h3>Alabanza #1</h3>
+            <p class="muted">Reproduce y comparte</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ratio">
+            <iframe src="https://www.youtube.com/embed/DHiNOzT2jcQ" title="Alabanza 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="body">
+            <h3>Alabanza #2</h3>
+            <p class="muted">Que sea de bendición</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SERMONS ======= -->
+  <section id="sermons" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Predicaciones Recientes</h2>
+        <span class="muted">Mensajes del Pastor Ricardo Luna</span>
+      </div>
+      <div class="grid-2 reveal">
+        <div class="card">
+          <div class="body">
+            <h3>Audio</h3>
+            <audio controls preload="none" style="width:100%">
+              <source src="https://your-audio-link.com/sermon.mp3" type="audio/mpeg" />
+              Tu navegador no soporta el reproductor de audio.
+            </audio>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ratio">
+            <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" title="Transmisión en vivo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="body">
+            <h3>Última transmisión</h3>
+            <p class="muted">Sintoniza cuando estemos en vivo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= LIVESTREAM (CTA STRIP) ======= -->
+  <section id="livestream" class="section" style="padding-top:0">
+    <div class="container reveal">
+      <div class="card" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:center">
+        <div class="body">
+          <h3>Únete al servicio en vivo</h3>
+          <p class="muted">Transmitimos nuestros servicios principales los domingos. ¡Acompáñanos!</p>
+          <a class="pill" href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener">Ver canal en YouTube</a>
+        </div>
+        <div class="ratio">
+          <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" title="En vivo" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= GALLERY & MAP ======= -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Galería</h2>
+        <span class="muted">Momentos en comunidad</span>
+      </div>
+      <div class="grid-3 reveal">
+        <div class="card"><img src="assets/gallery-1.jpg" alt="Frente de la iglesia" /></div>
+        <div class="card"><img src="assets/gallery-2.jpg" alt="Tiempo de alabanza" /></div>
+        <div class="card"><img src="assets/gallery-3.jpg" alt="Convivio" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>¿Dónde Estamos?</h2>
+        <span class="muted">3510 S Main St, Winston‑Salem, NC</span>
+      </div>
+      <div class="card reveal">
+        <div class="ratio">
+          <!-- Replace the src with your real Google Maps embed URL -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..." loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Mapa de ubicación"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= DONATE ======= -->
+  <section id="donate" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Apoya Nuestro Ministerio</h2>
+        <span class="muted">Gracias por sembrar en el Reino de Dios</span>
+      </div>
+      <div class="donate-grid reveal">
+        <div class="donate-box">
+          <h3>Dona con PayPal</h3>
+          <form action="https://www.paypal.com/donate" method="post" target="_blank">
+            <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
+            <button class="pill" type="submit" aria-label="Donar con PayPal">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 2C8.81 2 6 4.06 6 7.66c0 2.04 1.14 3.12 2.86 3.12c1.3 0 2.32-.64 2.8-1.82h.04c.04 1.3 1.12 2.34 2.48 2.34c2.1 0 3.82-1.86 3.82-4.48C18 3.84 16.22 2 13.5 2m-2.3 6.18C10.6 8.83 9.73 9.3 8.86 9.3c-.92 0-1.5-.6-1.5-1.64c0-1.8 1.56-3.04 4.1-3.04c1.48 0 2.4.56 2.4 1.52c0 1.32-1.82 1.4-2.66 2.04M7.4 14.5l-1.22 6.9h3.1l.6-3.4h1.98c3.66 0 6.18-1.86 6.18-5.52c0-1.06-.24-1.92-.68-2.6c-.02 3.3-2.26 5.64-6.66 5.64z"/></svg>
+              Donar con PayPal
+            </button>
+          </form>
+        </div>
+        <div class="donate-box">
+          <h3>Otras formas</h3>
+          <p><strong>💵 Cash App:</strong> <code>$TuCashtag</code></p>
+          <p><strong>🏦 Zelle:</strong> <code>tuemail@ejemplo.com</code></p>
+          <p><strong>📱 Venmo:</strong> <code>@TuVenmo</code></p>
+          <p class="muted">Sugerencia: agrega códigos QR en <code>assets/</code> y enlázalos aquí.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PRAYER ======= -->
+  <section id="prayer" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Petición de Oración</h2>
+        <span class="muted">Nos comprometemos a orar por ti</span>
+      </div>
+      <div class="card reveal">
+        <div class="body">
+          <form class="form" action="https://formspree.io/f/myzjenpq" method="POST">
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <textarea name="message" rows="5" placeholder="Escribe tu petición de oración aquí..." required></textarea>
+            <button class="pill" type="submit">Enviar petición</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Contáctanos</h2>
+        <span class="muted">Estamos para servirte</span>
+      </div>
+      <div class="grid-2 reveal">
+        <div class="card">
+          <div class="body">
+            <h3>Información</h3>
+            <p><strong>Pastor:</strong> Ricardo Luna</p>
+            <p><strong>Email:</strong> <a href="mailto:iglesiabetel2002@yahoo.com">iglesiabetel2002@yahoo.com</a></p>
+            <p><strong>Teléfono:</strong> <a href="tel:+13364624594">(336) 462‑4594</a></p>
+            <p><strong>Dirección:</strong> 3510 S Main St, Winston‑Salem, NC</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="body">
+            <h3>Planifica tu visita</h3>
+            <p class="muted">¿Primera vez? Te reservamos asiento y te damos la bienvenida desde la puerta.</p>
+            <a class="pill" href="#services">Ver horarios</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Iglesia Cristiana Bet-EL. Todos los derechos reservados.</p>
+    <div class="container footer-grid">
+      <div>
+        <strong>Bet‑EL</strong>
+        <p class="muted">Iglesia Pentecostés en Winston‑Salem, NC</p>
+        <p class="copyright">© <span id="y"></span> Iglesia Cristiana Bet‑EL. Todos los derechos reservados.</p>
+      </div>
+      <div>
+        <p><a href="#prayer">Pedir oración</a></p>
+        <p><a href="#donate">Donar</a></p>
+        <p><a href="#location">Ubicación</a></p>
+      </div>
+      <div>
+        <p><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></p>
+        <p><a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener">YouTube</a></p>
+        <p><a href="mailto:iglesiabetel2002@yahoo.com">Email</a></p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Smooth scroll for same-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length > 1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); }
+      })
+    })
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12 })
+    document.querySelectorAll('.reveal').forEach(el=> io.observe(el))
+
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear()
+  </script>
 </body>
 </html>
+
 
 
 
